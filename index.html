@@ -101,7 +101,7 @@ p{max-width:62ch}
 .btn:hover{transform:translate(-2px,-3px);box-shadow:8px 8px 0 var(--ochre)}
 .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ochre)}
 .cover-art{display:flex;justify-content:center}
-.cover-art svg{width:min(100%,520px);height:auto;overflow:visible}
+.cover-art svg{width:min(100%,520px);height:auto;overflow:visible}.cover-art img{display:block;width:min(100%,560px);height:auto;max-height:78vh;object-fit:contain;border:1px solid rgba(103,24,43,.18);box-shadow:10px 10px 0 var(--ochre)}
 .cover-foot .hand{color:var(--ink)}
 .c-line{fill:none;stroke:#67182B;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .c-paper{fill:#FFF0CF;stroke:#67182B;stroke-width:2.4;stroke-linejoin:round}
@@ -268,68 +268,7 @@ p{max-width:62ch}
     <p class="rise"><a class="btn" href="#building">open my head <span aria-hidden="true">↗</span></a></p>
   </div>
 
-  <div class="cover-art">
-    <svg viewBox="0 0 420 540" role="img" aria-label="Illustration: a crooked storybook building with glowing windows, a tiny panda looking out of one window, a very small door, and a staircase that leads to a floating door.">
-      <!-- paper sun + offset paper layer -->
-      <circle cx="92" cy="122" r="38" fill="#E0C389"/>
-      <g fill="#E0C389"><polygon points="121,499 129,219 261,209 271,499"/><path d="M109 221 L195 127 L281 211Z"/></g>
-
-      <!-- main tower -->
-      <polygon class="c-paper" points="112,490 120,210 252,200 262,490"/>
-      <path d="M100 212 L186 118 L272 202Z" fill="#67182B" stroke="#67182B" stroke-width="2.4" stroke-linejoin="round"/>
-      <polygon class="c-paper" points="216,160 234,154 236,126 218,130"/>
-      <path class="c-line" d="M227 120 q-8 -12 2 -20 q10 -8 0 -18" stroke-width="1.8"/>
-
-      <!-- left wing -->
-      <polygon class="c-paper" points="34,490 38,372 112,368 112,490"/>
-      <path d="M26 374 L74 328 L120 368Z" fill="#01395E" stroke="#67182B" stroke-width="2.4" stroke-linejoin="round"/>
-      <path class="c-line" fill="#E0C389" d="M78 440 v-26 a11 11 0 0 1 22 0 v26z"/>
-      <path class="c-line" fill="#E0C389" d="M46 490 v-28 a7 7 0 0 1 14 0 v28z"/>
-
-      <!-- tall right tower -->
-      <polygon points="272,490 276,170 334,166 338,490" fill="#01395E" stroke="#67182B" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M268 172 Q304 92 340 166Z" fill="#E0C389" stroke="#67182B" stroke-width="2.4" stroke-linejoin="round"/>
-      <path class="c-line" d="M304 104 V72"/>
-      <rect class="twinkle" x="298" y="212" width="12" height="30" rx="6" fill="#E0C389"/>
-      <rect class="twinkle" style="animation-delay:1.6s" x="298" y="272" width="12" height="30" rx="6" fill="#E0C389"/>
-      <circle class="twinkle" style="animation-delay:3s" cx="304" cy="362" r="9" fill="#E0C389"/>
-
-      <!-- windows on the main tower -->
-      <path class="c-line twinkle" fill="#E0C389" d="M138 300 v-34 a15 15 0 0 1 30 0 v34z"/>
-      <path class="c-line twinkle" style="animation-delay:2s" fill="#E0C389" d="M206 296 v-30 a13 13 0 0 1 26 0 v30z"/>
-      <circle class="c-line twinkle" style="animation-delay:1s" cx="170" cy="372" r="16" fill="#E0C389"/>
-      <path class="c-line" stroke-width="1.5" d="M170 356 v32 M154 372 h32"/>
-      <path class="c-line" fill="#44202E" d="M205 404 v-42 a20 20 0 0 1 40 0 v42z"/>
-      <use href="#panda" x="207" y="364" width="36" height="36" style="color:#E0C389"/>
-      <path class="c-line" d="M199 404 h52"/>
-
-      <!-- front door -->
-      <path class="c-line" fill="#E0C389" d="M168 490 v-48 a18 18 0 0 1 36 0 v48z"/>
-      <circle cx="196" cy="470" r="2.5" fill="#67182B"/>
-
-      <!-- impossible staircase to a floating door -->
-      <path class="c-line" d="M338 430 H356 V416 H374 V402 H392 V388 H410"/>
-      <path class="c-line" fill="#E0C389" d="M396 388 v-16 a6 6 0 0 1 12 0 v16z"/>
-
-      <!-- ground + tufts -->
-      <path class="c-line" d="M10 490 H410"/>
-      <path class="c-line" stroke-width="1.8" d="M18 490 l-3 -9 M23 490 l2 -10 M28 490 l-1 -7 M366 490 l-2 -9 M371 490 l3 -10 M376 490 l-1 -6"/>
-
-      <!-- little discoveries -->
-      <use href="#star" x="40" y="48" width="22" height="22" style="color:#67182B"/>
-      <use href="#star" x="236" y="36" width="16" height="16" style="color:#01395E"/>
-      <use href="#star" x="352" y="40" width="26" height="26" style="color:#67182B"/>
-      <use href="#star" x="296" y="54" width="18" height="18" style="color:#67182B"/>
-      <use href="#heart" x="258" y="338" width="14" height="14" style="color:#67182B"/>
-
-      <!-- marginalia -->
-      <text class="note-t" x="10" y="300">that's a panda</text>
-      <path class="c-line" stroke-width="1.6" d="M118 306 Q170 310 198 366"/>
-      <path class="c-line" stroke-width="1.6" d="M190 358 L198 368 L207 357"/>
-      <text class="note-t" x="12" y="524">mind the tiny door</text>
-      <text class="note-t" x="410" y="524" text-anchor="end">stairs to nowhere (so far)</text>
-    </svg>
-  </div>
+  <div class="cover-art"><img src="cover.png.jpeg" alt="Shreya’s illustrated vintage scrapbook portfolio cover" fetchpriority="high"></div>
 
   <div class="cover-foot">
     <p class="hand">made with curiosity, occasionally with coffee</p>
@@ -555,10 +494,10 @@ p{max-width:62ch}
 //    alt  = a short description for people using screen readers (please edit!)
 //    caption = optional title shown under the slide (leave '' for none)
 var SLIDES = [
-  { src: 'slides/slide-1.png', alt: 'Portfolio slide 1', caption: '' },
-  { src: 'slides/slide-2.png', alt: 'Portfolio slide 2', caption: '' },
-  { src: 'slides/slide-3.png', alt: 'Portfolio slide 3', caption: '' },
-  { src: 'slides/slide-4.png', alt: 'Portfolio slide 4', caption: '' }
+  { src: '1%5B1%5D.png', alt: 'Portfolio slide 1', caption: '' },
+  { src: '2%5B1%5D.png', alt: 'Portfolio slide 2', caption: '' },
+  { src: '3%5B1%5D.png', alt: 'Portfolio slide 3', caption: '' },
+  { src: '4%5B1%5D.png', alt: 'Portfolio slide 4', caption: '' }
 ];
 
 // 2) THE THOUGHT PILE in the messy mind.
