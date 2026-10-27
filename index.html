@@ -86,16 +86,16 @@ p{max-width:62ch}
 }
 
 /* ---------- cover ---------- */
-.cover{min-height:100svh;display:grid;grid-template-columns:1fr;align-items:center;gap:20px 40px;padding:clamp(18px,3.5vw,48px);position:relative}
-@media (min-width:880px){.cover{grid-template-columns:1.05fr .95fr}}
-.cover-top,.cover-foot{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
-.cover-top{border-bottom:1.5px solid var(--burgundy);padding-bottom:12px}
-.cover-top .kicker{color:var(--burgundy)}
-.cover h1{font-size:clamp(3.6rem,12vw,9rem);color:var(--burgundy);margin-bottom:.22em}
-.cover h1 .hii{display:block;font-style:italic}
-.cover h1 .this{display:inline-block;font-family:var(--hand);font-size:.34em;font-weight:500;color:var(--ink);transform:rotate(-5deg) translateY(-.35em);margin-right:.3em}
-.cover h1 .name{display:inline-block;color:var(--ink);background:linear-gradient(transparent 70%,var(--ochre) 70%,var(--ochre) 92%,transparent 92%)}
-.cover .lede{font-family:var(--serif);font-style:italic;font-size:clamp(1.55rem,3.2vw,2.3rem);line-height:1.12;max-width:20ch;margin-bottom:1.4em;color:var(--plum)}
+.cover{min-height:100svh;height:100svh;width:100%;display:block;padding:0;position:relative;overflow:hidden;background:var(--cream)}
+.cover-top,.cover-copy,.cover-foot{position:absolute;z-index:2}
+.cover-top{top:0;left:0;width:100%;padding:12px 18px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center;pointer-events:none}
+.cover-top .kicker{color:var(--burgundy);font-size:.68rem;text-shadow:0 1px 8px var(--cream)}
+.cover-copy{left:50%;bottom:clamp(18px,4vh,42px);transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);text-align:center}
+.cover h1{display:none}
+.cover .lede{display:none}
+.cover-art{position:absolute;inset:0;display:block;width:100%;height:100%}
+.cover-art img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;border:0;box-shadow:none}
+.cover-foot{display:none}
 .btn{display:inline-flex;align-items:center;gap:.7em;min-height:52px;padding:.9em 1.7em;background:var(--burgundy);color:var(--cream);
   font:700 1rem var(--sans);letter-spacing:.05em;text-decoration:none;border-radius:34px 34px 6px 6px;box-shadow:5px 5px 0 var(--ochre);transition:transform .25s,box-shadow .25s}
 .btn:hover{transform:translate(-2px,-3px);box-shadow:8px 8px 0 var(--ochre)}
@@ -256,23 +256,10 @@ p{max-width:62ch}
 <main id="main" tabindex="-1">
 
 <!-- ======================= COVER ======================= -->
-<section class="view cover" id="cover" data-title="hii, this is Shreya">
-  <div class="cover-top">
-    <p class="kicker">if my brain was a building</p>
-    <p class="kicker">a personal portfolio · no. 01</p>
-  </div>
-
+<section class="view cover" id="cover" data-title="Curious Designist — Shreya">
+  <div class="cover-art"><img src="cover.png.jpeg" alt="Curious Designist — Shreya’s vintage scrapbook cover illustration" fetchpriority="high"></div>
   <div class="cover-copy">
-    <h1 class="rise"><span class="hii">hii,</span><span class="this">this is</span> <span class="name">Shreya</span></h1>
-    <p class="lede rise">i made a little place out of everything inside my head.</p>
-    <p class="rise"><a class="btn" href="#building">open my head <span aria-hidden="true">↗</span></a></p>
-  </div>
-
-  <div class="cover-art"><img src="cover.png.jpeg" alt="Shreya’s illustrated vintage scrapbook portfolio cover" fetchpriority="high"></div>
-
-  <div class="cover-foot">
-    <p class="hand">made with curiosity, occasionally with coffee</p>
-    <p class="kicker" style="color:var(--burgundy)">tap the door to go in</p>
+    <a class="btn" href="#building">OPEN BRAINO <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -372,6 +359,7 @@ p{max-width:62ch}
     <div class="split">
       <div>
         <p class="intro">i'm Shreya, and this is the inside of my head, tidied up just enough to have visitors.</p>
+    <figure class="stage"><div class="frame"><img src="floor-1-who-is-she.png.jpeg" alt="Floor 1 — Who Is She?" loading="lazy"></div><figcaption>floor 1 · who is she?</figcaption></figure>
         <p><span class="ph">[EDIT: two or three short sentences about you. What you study or make, what you're curious about, and what kind of work or conversation you're hoping this leads to.]</span></p>
         <p class="hand margin-note">(you can look around. nothing is locked.)</p>
       </div>
@@ -391,6 +379,7 @@ p{max-width:62ch}
     <p class="kicker">room 02 · the observation room</p>
     <h2 tabindex="-1">things <em>i noticed</em></h2>
     <p class="intro">look a little closer. there's probably a story here.</p>
+    <figure class="stage"><div class="frame"><img src="floor-2-where-is-she-going.png.jpeg" alt="Floor 2 — Where Is She Going?" loading="lazy"></div><figcaption>floor 2 · where is she going?</figcaption></figure>
     <p class="hint"><span class="ph">[EDIT: these are starter notes. Replace each one with something you have really noticed.]</span></p>
     <ol class="notes">
       <li><details><summary><span class="num">1</span><span class="txt">streetlights switch on one by one, like a slow sentence being finished.</span></summary>
@@ -412,24 +401,13 @@ p{max-width:62ch}
   <div class="page">
     <p class="kicker">room 03 · the studio</p>
     <h2 tabindex="-1">the <em>studio</em></h2>
-    <p class="intro">original work, laid out on the table. nothing borrowed, nothing redrawn.</p>
-
+    <p class="intro">Where ideas turn into sketches, experiments, and things made with intention.</p>
     <figure class="stage">
       <div class="frame">
-        <img id="slideImg" alt="Portfolio slide 1" decoding="async">
-        <p class="missing" id="slideMissing" hidden>This slide isn't here yet.<br>Upload your image to <code id="missingPath">slides/slide-1.png</code> in the GitHub repository.</p>
+        <img src="floor-3-the-studio.png.jpeg" alt="Floor 3 — The Studio, a scrapbook-style introduction to Shreya’s design work" decoding="async">
       </div>
-      <figcaption id="slideCap" hidden></figcaption>
+      <figcaption>the studio · sketches, experiments, and things made with intention.</figcaption>
     </figure>
-
-    <div class="controls">
-      <button class="ctl" id="prevSlide" type="button"><span aria-hidden="true">←&nbsp;</span> previous</button>
-      <p class="count" id="slideCount" aria-live="polite">1 / 4</p>
-      <button class="ctl" id="nextSlide" type="button">next <span aria-hidden="true">&nbsp;→</span></button>
-      <a class="ctl full" id="slideFull" href="slides/slide-1.png" target="_blank" rel="noopener">open full size <span aria-hidden="true">&nbsp;↗</span></a>
-    </div>
-    <ul class="thumbs" id="thumbs" aria-label="all slides"></ul>
-    <p class="hint">tip: on a keyboard, the left and right arrow keys flip through the slides.</p>
   </div>
 </section>
 
@@ -441,6 +419,7 @@ p{max-width:62ch}
     <div class="split">
       <div>
         <p class="intro">nothing in here is done. that's the point.</p>
+    <figure class="stage"><div class="frame"><img src="floor-4-group-projects.png.jpeg" alt="Floor 4 — Group Projects" loading="lazy"></div><figcaption>floor 4 · group projects · Different minds, shared ideas, and the magic of creating something together.</figcaption></figure>
         <div class="pull">
           <button class="btn" id="pullBtn" type="button">pull a thought <span aria-hidden="true">↗</span></button>
           <svg class="mini-panda" id="miniPanda" viewBox="0 0 36 36" width="72" height="72" aria-hidden="true" style="color:#01395E"><use href="#panda" x="0" y="0" width="36" height="36"/></svg>
@@ -472,6 +451,7 @@ p{max-width:62ch}
     <p class="kicker">room 05 · the archive</p>
     <h2 tabindex="-1">the <em>archive</em></h2>
     <p class="intro">things that shaped me, and things i'm still learning.</p>
+    <figure class="stage"><div class="frame"><img src="floor-5-the-archive.png.jpeg" alt="Floor 5 — The Archive" loading="lazy"></div><figcaption>floor 5 · a little collection of memories, unfinished thoughts, lessons, and things worth keeping.</figcaption></figure>
     <ol class="index">
       <li><span class="num">1</span><span class="tag">inspiration</span><span class="txt"><span class="ph">[EDIT: a book, film, building, artist or place that stays with you]</span></span></li>
       <li><span class="num">2</span><span class="tag">inspiration</span><span class="txt"><span class="ph">[EDIT: another one]</span></span></li>
@@ -490,15 +470,7 @@ p{max-width:62ch}
    EDIT THESE TWO LISTS, they are the only parts you'll likely change.
    ========================================================== */
 
-// 1) YOUR FOUR SLIDES. Files live in the "slides" folder of the repository.
-//    alt  = a short description for people using screen readers (please edit!)
-//    caption = optional title shown under the slide (leave '' for none)
-var SLIDES = [
-  { src: '1%5B1%5D.png', alt: 'Portfolio slide 1', caption: '' },
-  { src: '2%5B1%5D.png', alt: 'Portfolio slide 2', caption: '' },
-  { src: '3%5B1%5D.png', alt: 'Portfolio slide 3', caption: '' },
-  { src: '4%5B1%5D.png', alt: 'Portfolio slide 4', caption: '' }
-];
+// The room artwork is displayed in its own room.
 
 // 2) THE THOUGHT PILE in the messy mind.
 var THOUGHTS = [
@@ -602,55 +574,6 @@ var THOUGHTS = [
     var m = document.getElementById('main');
     m.focus({ preventScroll: false });
   });
-
-  /* ---------- studio gallery ---------- */
-  var img = document.getElementById('slideImg');
-  var missing = document.getElementById('slideMissing');
-  var missingPath = document.getElementById('missingPath');
-  var cap = document.getElementById('slideCap');
-  var count = document.getElementById('slideCount');
-  var full = document.getElementById('slideFull');
-  var thumbsEl = document.getElementById('thumbs');
-  var idx = 0, thumbBtns = [];
-
-  SLIDES.forEach(function (s, i) {
-    var li = document.createElement('li');
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'show slide ' + (i + 1));
-    var t = document.createElement('img');
-    t.src = s.src; t.alt = ''; t.loading = 'lazy';
-    t.addEventListener('error', function () { t.remove(); });
-    var n = document.createElement('span');
-    n.className = 'tn'; n.textContent = i + 1;
-    b.appendChild(t); b.appendChild(n);
-    b.addEventListener('click', function () { renderSlide(i); });
-    li.appendChild(b); thumbsEl.appendChild(li); thumbBtns.push(b);
-  });
-
-  function renderSlide(i) {
-    idx = (i + SLIDES.length) % SLIDES.length;
-    var s = SLIDES[idx];
-    missing.hidden = true; img.hidden = false;
-    img.alt = s.alt; img.src = s.src;
-    full.setAttribute('href', s.src);
-    count.textContent = (idx + 1) + ' / ' + SLIDES.length;
-    cap.textContent = s.caption || ''; cap.hidden = !s.caption;
-    thumbBtns.forEach(function (b, k) {
-      if (k === idx) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
-    });
-  }
-  img.addEventListener('error', function () {
-    img.hidden = true; missing.hidden = false; missingPath.textContent = SLIDES[idx].src;
-  });
-  document.getElementById('prevSlide').addEventListener('click', function () { renderSlide(idx - 1); });
-  document.getElementById('nextSlide').addEventListener('click', function () { renderSlide(idx + 1); });
-  document.addEventListener('keydown', function (e) {
-    if (current !== 'studio' || e.altKey || e.ctrlKey || e.metaKey) return;
-    if (e.key === 'ArrowLeft') renderSlide(idx - 1);
-    if (e.key === 'ArrowRight') renderSlide(idx + 1);
-  });
-  renderSlide(0);
 
   /* ---------- messy mind: pull a thought ---------- */
   var out = document.getElementById('thought');
